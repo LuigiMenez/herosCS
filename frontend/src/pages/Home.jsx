@@ -1,10 +1,5 @@
-import Button from "@components/Button";
+import Header from "@components/Header";
 
 export default function Home() {
-  return (
-    <>
-      <Button title="Log In" />
-      <h1>Hello here</h1>
-    </>
-  );
+  return <Header />;
 }
