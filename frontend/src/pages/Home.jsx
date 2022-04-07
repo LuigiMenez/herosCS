@@ -1,3 +1,10 @@
+import Button from "@components/Button";
+
 export default function Home() {
-  return <h1>Hello here</h1>;
+  return (
+    <>
+      <Button title="Log In" />
+      <h1>Hello here</h1>
+    </>
+  );
 }
