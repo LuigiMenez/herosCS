@@ -23,10 +23,6 @@ const SHeader = styled.header`
     border-radius: 15px;
     font-size: 16px;
   }
-  @media only screen and (min-width: 700px)  {h1
-    background: red;
-    width: 70vw;
-  } ;
 `;
 
 export default SHeader;
