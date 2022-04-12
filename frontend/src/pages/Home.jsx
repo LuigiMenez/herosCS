@@ -7,16 +7,17 @@ export default function Home() {
   const [jdrs, setJdrs] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/`).then(({ data }) => {
+    axios.get(`http://localhost:5050/jdr`).then(({ data }) => {
       setJdrs(data);
-      console.log(data);
     });
   }, []);
 
   return (
     <>
       <Header />
-      <Cards />
+      {jdrs.map((jdr) => (
+        <Cards key={jdr.id} image={jdr.image} name={jdr.name} />
+      ))}
     </>
   );
 }
