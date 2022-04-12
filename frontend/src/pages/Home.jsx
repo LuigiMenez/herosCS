@@ -1,22 +1,24 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import Cards from "@components/Cards";
+import { useSelector, useDispatch } from "react-redux";
+import { getGames } from "../redux/games/gameReducer";
 
 export default function Home() {
-  const [jdrs, setJdrs] = useState([]);
+  const { games } = useSelector((state) => ({
+    ...state.gameReducer,
+  }));
 
+  const dispatch = useDispatch();
   useEffect(() => {
-    axios.get(`http://localhost:5050/jdr`).then(({ data }) => {
-      setJdrs(data);
-    });
+    dispatch(getGames());
   }, []);
 
   return (
     <>
-      {jdrs.map((jdr) => (
-        <Link key={jdr.id} className="link" to={`/${jdr.name}`}>
-          <Cards key={jdr.id} image={jdr.image} name={jdr.name} />
+      {games.map((game) => (
+        <Link key={game.id} className="link" to={`/${game.name}`}>
+          <Cards key={game.id} image={game.image} name={game.name} />
         </Link>
       ))}
     </>
