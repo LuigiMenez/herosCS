@@ -2,16 +2,16 @@ import styled from "styled-components";
 
 const SCard = styled.div`
   background: url(${(props) => props.img});
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  margin: auto;
+  margin: 1.5rem auto 1.5rem;
   height: 20vh;
   width: 90vw;
   outline: solid 4px var(--main-color);
   border-radius: 15px;
-  margin-top: 10px;
-  margin-bottom: 10px;
   overflow: hidden;
 
   p {
