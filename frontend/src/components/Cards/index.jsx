@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import SCard from "./style";
 
 export default function Cards({ name, image }) {
