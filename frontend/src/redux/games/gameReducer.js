@@ -13,9 +13,9 @@ function gameReducer(state = initialState, action) {
         games: action.payload,
       };
     }
-    // no default
+    default:
+      return state;
   }
-  return state;
 }
 
 export default gameReducer;
