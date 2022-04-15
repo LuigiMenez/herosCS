@@ -1,27 +1,29 @@
 import styled from "styled-components";
+import { media } from "../../mediaQueries";
 
 const SHeader = styled.header`
-  height: 10vh;
+  height: 3vh;
   background-color: var(--second-color);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
   padding: 2.5em;
+  ${media("pad")`
+    height: 10vh;
+    width: 70vw;
+    justify-content: space-between
+    `}
 
   h1 {
     color: var(--main-color);
-    text-align: center;
     font-size: 3.5em;
     font-weight: bold;
-  }
+    display: none;
 
-  .auth {
-    position: absolute;
-    top: 1em;
-    right: 0.5em;
-    height: 25px;
-    border-radius: 15px;
-    font-size: 16px;
+    ${media("pad")`
+      display: flex;
+      align-items: center;
+    `}
   }
 `;
 
