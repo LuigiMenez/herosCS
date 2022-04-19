@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { media } from "../../mediaQueries";
 
 const SCard = styled.div`
   background: url(${(props) => props.img});
@@ -13,6 +14,8 @@ const SCard = styled.div`
   outline: solid 4px var(--main-color);
   border-radius: 15px;
   overflow: hidden;
+  ${media("pad")`
+    width: 20vw;`}
 
   p {
     background-color: #1f1d3578;
