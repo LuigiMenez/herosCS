@@ -19,6 +19,13 @@ class AbstractManager {
       id,
     ]);
   }
+
+  findAllCharacter(id) {
+    return this.connection.query(
+      `SELECT * FROM Characters INNER JOIN jdr ON idJdr = jdr.id WHERE idJdr = ?`,
+      [id]
+    );
+  }
 }
 
 module.exports = AbstractManager;
