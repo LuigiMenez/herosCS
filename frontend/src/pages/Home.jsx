@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <SHome>
       {games.map((game) => (
-        <Link key={game.id} className="link" to={`/${game.name}`}>
+        <Link key={game.id} className="link" to={`/${game.id}`}>
           <Cards key={game.id} image={game.image} name={game.name} />
         </Link>
       ))}
