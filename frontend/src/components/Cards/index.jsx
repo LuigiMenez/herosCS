@@ -14,5 +14,5 @@ Cards.propTypes = {
 };
 Cards.defaultProps = {
   image: "",
-  name: () => {},
+  name: "",
 };
