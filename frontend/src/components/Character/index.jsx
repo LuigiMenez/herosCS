@@ -9,7 +9,6 @@ import SCharac from "./style";
 
 export default function Character() {
   const { id } = useParams();
-  console.log(id);
   const { currentGame } = useSelector((state) => {
     return (
       {
@@ -25,7 +24,6 @@ export default function Character() {
   useEffect(() => {
     dispatch(gameDetails(id));
   }, []);
-  console.log(gameDetails);
   useEffect(() => {
     dispatch(getCharacter(id));
   }, []);
