@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const initialState = {
-  character: [],
+  characters: [],
 };
 
 // eslint-disable-next-line default-param-last
@@ -10,7 +10,7 @@ function characterReducer(state = initialState, action) {
     case "LOADCHARACTER": {
       return {
         ...state,
-        games: action.payload,
+        character: action.payload,
       };
     }
     default:
