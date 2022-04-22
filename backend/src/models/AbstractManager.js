@@ -20,9 +20,10 @@ class AbstractManager {
     ]);
   }
 
-  findAllCharacter(id) {
+  CharactersByGame(id) {
     return this.connection.query(
-      `SELECT * FROM Characters INNER JOIN jdr ON idJdr = jdr.id WHERE idJdr = ?`,
+      `SELECT ch.id, nameCharacters, sexe, size, origin, idUser, idJdr, lvl FROM Characters AS ch
+INNER JOIN jdr ON idJdr = jdr.id WHERE idJdr = ?`,
       [id]
     );
   }
