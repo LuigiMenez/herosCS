@@ -16,7 +16,8 @@ export default function Character() {
       } || {}
     );
   });
-  const { games } = useSelector((state) => ({
+
+  const { character } = useSelector((state) => ({
     ...state.characterReducer,
   }));
 
@@ -34,13 +35,13 @@ export default function Character() {
       <CharactersSection title="Mes personnages" />
       <CharacterList />
       <CharactersSection title="Autres personnages" />
-      {games.map(
-        (character) =>
-          id === character.idJdr && (
+      {character.map(
+        (chara) =>
+          currentGame.id === chara.idJdr && (
             <CharacterList
-              key={character.id}
-              lvl={character.lvl}
-              characterName={character.nameCharacters}
+              key={chara.id}
+              lvl={chara.lvl}
+              characterName={chara.nameCharacters}
             />
           )
       )}
