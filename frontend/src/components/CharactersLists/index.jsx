@@ -19,12 +19,13 @@ export default function CharacterList({
   );
 }
 CharacterList.propTypes = {
-  lvl: PropTypes.number.isRequired,
+  lvl: PropTypes.number,
   characterName: PropTypes.string,
   classCharacter: PropTypes.string,
   race: PropTypes.string,
 };
 CharacterList.defaultProps = {
+  lvl: null,
   characterName: "",
   classCharacter: "",
   race: "",

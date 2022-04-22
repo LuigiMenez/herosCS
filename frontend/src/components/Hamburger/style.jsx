@@ -25,7 +25,7 @@ const Sburger = styled.div`
   }
 
   .burger1 {
-    transform: ${(props) => (props.open ? "rotate(45deg)" : "rotate(0)}")};
+    transform: ${(props) => (props.open ? "rotate(45deg)" : "rotate(0)")};
   }
   .burger2 {
     transform: ${(props) =>

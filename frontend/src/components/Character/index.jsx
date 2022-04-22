@@ -9,6 +9,7 @@ import SCharac from "./style";
 
 export default function Character() {
   const { id } = useParams();
+  console.log(id);
   const { currentGame } = useSelector((state) => {
     return (
       {
@@ -24,6 +25,7 @@ export default function Character() {
   useEffect(() => {
     dispatch(gameDetails(id));
   }, []);
+  console.log(gameDetails);
   useEffect(() => {
     dispatch(getCharacter(id));
   }, []);
@@ -34,14 +36,16 @@ export default function Character() {
       <CharactersSection title="Mes personnages" />
       <CharacterList />
       <CharactersSection title="Autres personnages" />
-      {games.map((character) => {
-        return (
-          <CharacterList
-            lvl={character.lvl}
-            characterName={character.nameCharacters}
-          />
-        );
-      })}
+      {games.map(
+        (character) =>
+          id === character.idJdr && (
+            <CharacterList
+              key={character.id}
+              lvl={character.lvl}
+              characterName={character.nameCharacters}
+            />
+          )
+      )}
     </SCharac>
   );
 }
