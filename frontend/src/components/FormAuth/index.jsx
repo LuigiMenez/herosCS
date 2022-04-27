@@ -3,7 +3,7 @@ import SForm from "./style";
 
 export default function FormAuth() {
   const [registeredUser, setRegisterUser] = useState(false);
-  const [log, setLog] = useState({
+  const [formData, setFormData] = useState({
     login: "",
     mail: "",
     password: "",
@@ -12,9 +12,9 @@ export default function FormAuth() {
   });
 
   const changeLog = (evt) => {
-    const newData = { ...log };
+    const newData = { ...formData };
     newData[evt.target.name] = evt.target.value;
-    setLog(newData);
+    setFormData(newData);
   };
   const hChange = () => {
     return setRegisterUser(!registeredUser);
@@ -31,7 +31,7 @@ export default function FormAuth() {
               <input
                 type="text"
                 name="lastname"
-                value={log.lastname}
+                value={formData.lastname}
                 onChange={changeLog}
               />
             </label>
@@ -40,7 +40,7 @@ export default function FormAuth() {
               <input
                 type="text"
                 name="firstname"
-                value={log.firstname}
+                value={formData.firstname}
                 onChange={changeLog}
               />
             </label>
@@ -49,7 +49,7 @@ export default function FormAuth() {
               <input
                 type="text"
                 name="login"
-                value={log.login}
+                value={formData.login}
                 onChange={changeLog}
               />
             </label>
@@ -58,7 +58,7 @@ export default function FormAuth() {
               <input
                 type="mail"
                 name="mail"
-                value={log.mail}
+                value={formData.mail}
                 onChange={changeLog}
               />
             </label>
@@ -67,7 +67,7 @@ export default function FormAuth() {
               <input
                 type="password"
                 name="password"
-                value={log.password}
+                value={formData.password}
                 onChange={changeLog}
               />
             </label>
@@ -82,7 +82,7 @@ export default function FormAuth() {
               <input
                 type="email"
                 name="mail"
-                value={log.mail}
+                value={formData.mail}
                 onChange={changeLog}
               />
             </label>
@@ -91,7 +91,7 @@ export default function FormAuth() {
               <input
                 type="password"
                 name="password"
-                value={log.password}
+                value={formData.password}
                 onChange={changeLog}
               />
             </label>

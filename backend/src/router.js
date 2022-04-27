@@ -1,9 +1,12 @@
 const express = require("express");
+const passport = require("passport");
+require("./passportStrategies");
 
 const {
   ItemController,
   JdrController,
   CharactersController,
+  AuthController,
 } = require("./controllers");
 
 const router = express.Router();
@@ -22,5 +25,14 @@ router.delete("/jdr/:id", JdrController.delete);
 
 router.get("/Characters", CharactersController.browse);
 router.get("/Characters/:id", CharactersController.read);
+
+router.post("/auth/signup", AuthController.signup);
+router.post(
+  "/auth/login",
+  passport.authenticate("local"),
+  AuthController.login
+);
+
+router.use(passport.authenticate("jwt"));
 
 module.exports = router;
