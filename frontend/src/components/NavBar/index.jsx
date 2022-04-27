@@ -1,3 +1,4 @@
+import FormAuth from "@components/FormAuth";
 import Hamburger from "@components/Hamburger";
 import Modal from "@components/Modal/Modal";
 import { useState } from "react";
@@ -27,7 +28,7 @@ export default function NavBar() {
           <Button title="Log In" func={showModal} />
         </li>
         <Modal close={closeModal} show={show}>
-          <p>Ici ma modal</p>
+          <FormAuth />
         </Modal>
         <li>
           <Button title="Sign Up" />
