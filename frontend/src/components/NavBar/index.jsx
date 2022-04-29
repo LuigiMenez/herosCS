@@ -1,8 +1,6 @@
 import FormAuth from "@components/FormAuth";
-import Hamburger from "@components/Hamburger";
 import Modal from "@components/Modal/Modal";
 import { useState } from "react";
-import Button from "../Button";
 import SNav from "./style";
 import iconProfil from "../../assets/iconProfil.svg";
 
