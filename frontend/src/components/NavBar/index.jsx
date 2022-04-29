@@ -4,14 +4,10 @@ import Modal from "@components/Modal/Modal";
 import { useState } from "react";
 import Button from "../Button";
 import SNav from "./style";
+import iconProfil from "../../assets/iconProfil.svg";
 
 export default function NavBar() {
-  const [hamburgerOpen, setHamburgerOpen] = useState(false);
   const [show, setShow] = useState(false);
-
-  const toggleHamburger = () => {
-    setHamburgerOpen(!hamburgerOpen);
-  };
 
   const showModal = () => {
     setShow(true);
@@ -22,21 +18,13 @@ export default function NavBar() {
   };
 
   return (
-    <SNav hamburgerOpen={hamburgerOpen}>
-      <ul>
-        <li>
-          <Button title="Log In" func={showModal} />
-        </li>
-        <Modal close={closeModal} show={show}>
-          <FormAuth />
-        </Modal>
-        <li>
-          <Button title="Sign Up" />
-        </li>
-      </ul>
-      <button type="button" className="hamburger" onClick={toggleHamburger}>
-        <Hamburger isOpen={hamburgerOpen} />
+    <SNav>
+      <button type="button" className="hamburger" onClick={showModal}>
+        <img src={iconProfil} alt="Authentification" />
       </button>
+      <Modal close={closeModal} show={show}>
+        <FormAuth />
+      </Modal>
     </SNav>
   );
 }

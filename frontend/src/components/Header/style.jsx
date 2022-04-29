@@ -10,7 +10,7 @@ const SHeader = styled.header`
   padding: 2.5em;
   ${media("pad")`
     height: 10vh;
-    width: 70vw;
+    width: 67vw;
     justify-content: space-between
     `}
 
