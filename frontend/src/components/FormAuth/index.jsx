@@ -1,4 +1,8 @@
+import Button from "@components/Button";
+import axios from "axios";
+import { toast } from "react-toastify";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import SForm from "./style";
 
 export default function FormAuth() {
@@ -10,6 +14,7 @@ export default function FormAuth() {
     lastname: "",
     firstname: "",
   });
+  const dispatch = useDispatch();
 
   const changeLog = (evt) => {
     const newData = { ...formData };
@@ -19,8 +24,29 @@ export default function FormAuth() {
   const hChange = () => {
     return setRegisterUser(!registeredUser);
   };
+
+  const hsubmit = (evt) => {
+    evt.preventDefault();
+    let route = "http://localhost:5050/auth/login";
+    if (registeredUser) {
+      route = "http://localhost:5050/auth/signup";
+    }
+    axios
+      .post(route, formData)
+      .then(({ data }) => {
+        dispatch({
+          type: "LOGIN",
+          payload: data,
+        });
+        toast.success("🎲 Réussite critique!");
+      })
+      .catch(() => {
+        toast.error("🎲 Echec critique !");
+      });
+  };
+
   return (
-    <SForm className="checkbox">
+    <SForm className="checkbox" onSubmit={hsubmit}>
       <input type="checkbox" checked={registeredUser} onChange={hChange} />
       {registeredUser ? (
         <div className="formLogin">
@@ -71,6 +97,7 @@ export default function FormAuth() {
                 onChange={changeLog}
               />
             </label>
+            <Button title="Inscription" func={hsubmit} />
           </div>
         </div>
       ) : (
@@ -95,6 +122,7 @@ export default function FormAuth() {
                 onChange={changeLog}
               />
             </label>
+            <Button title="Connection" func={hsubmit} />
           </div>
         </div>
       )}
