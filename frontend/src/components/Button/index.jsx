@@ -3,7 +3,7 @@ import Sbutton from "@components/Button/style";
 
 export default function Button({ title, func }) {
   return (
-    <Sbutton type="button" className="logIn" onClick={func}>
+    <Sbutton type="button" onClick={func}>
       {title}
     </Sbutton>
   );

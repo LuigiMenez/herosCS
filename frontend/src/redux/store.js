@@ -3,11 +3,16 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import gameReducer from "./games/gameReducer";
 import characterReducer from "./games/characterReducer";
+import userReducer from "./games/userReducer";
 import { loadState, saveState } from "../localStorage";
 
 const persistedState = loadState();
 
-const rootReducer = combineReducers({ gameReducer, characterReducer });
+const rootReducer = combineReducers({
+  gameReducer,
+  characterReducer,
+  userReducer,
+});
 
 const store = createStore(
   rootReducer,
