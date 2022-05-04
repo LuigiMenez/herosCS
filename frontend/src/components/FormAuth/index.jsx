@@ -13,6 +13,7 @@ export default function FormAuth() {
     password: "",
     lastname: "",
     firstname: "",
+    avatar: "",
   });
   const dispatch = useDispatch();
 
