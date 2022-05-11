@@ -1,22 +1,22 @@
 const initialState = {
-  token: null,
+  token: "",
   user: {
-    id: null,
-    mail: null,
-    password: null,
-    login: null,
-    firstname: null,
-    lastname: null,
-    avatar: null,
+    id: "",
+    mail: "",
+    password: "",
+    login: "",
+    firstname: "",
+    lastname: "",
+    avatar: "",
   },
 };
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "LOGOUT":
-      return initialState;
     case "LOGIN":
       return { ...state, user: { ...action.payload } };
+    case "LOGOUT":
+      return initialState;
     default:
       return state;
   }
