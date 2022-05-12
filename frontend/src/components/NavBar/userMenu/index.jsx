@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import Button from "@components/Button";
+import SNavigation from "./style";
 
 export default function UserMenu() {
   const dispatch = useDispatch();
@@ -9,9 +10,15 @@ export default function UserMenu() {
   };
 
   return (
-    <>
-      <h2>Mon Profil</h2>
-      <Button title="Déconnexion" func={hLogout} />
-    </>
+    <SNavigation>
+      <div className="navigation">
+        <ul>
+          <li>Mon Profil</li>
+          <li>
+            <Button title="Déconnexion" func={hLogout} />
+          </li>
+        </ul>
+      </div>
+    </SNavigation>
   );
 }
