@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import Cards from "@components/Cards";
+import Caractereristic from "@components/Caracteristic";
 import { getGames } from "../redux/games/gameReducer";
 import SHome from "./style";
 
@@ -16,12 +17,15 @@ export default function Home() {
   }, []);
 
   return (
-    <SHome>
-      {games.map((game) => (
-        <Link key={game.id} className="link" to={`/${game.id}`}>
-          <Cards key={game.id} image={game.image} name={game.nameJdr} />
-        </Link>
-      ))}
-    </SHome>
+    <>
+      <SHome>
+        {games.map((game) => (
+          <Link key={game.id} className="link" to={`/${game.id}`}>
+            <Cards key={game.id} image={game.image} name={game.nameJdr} />
+          </Link>
+        ))}
+      </SHome>
+      <Caractereristic />
+    </>
   );
 }
