@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import Cards from "@components/Cards";
 import Caractereristic from "@components/Caracteristic";
+import Saving from "@components/Saving";
 import { getGames } from "../redux/games/gameReducer";
 import SHome from "./style";
 
@@ -26,6 +27,7 @@ export default function Home() {
         ))}
       </SHome>
       <Caractereristic />
+      <Saving />
     </>
   );
 }
