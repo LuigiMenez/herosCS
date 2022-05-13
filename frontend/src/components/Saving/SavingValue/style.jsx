@@ -1,30 +1,31 @@
 import styled from "styled-components";
 
-const SCaracForm = styled.form`
+const SsavingValue = styled.section`
   display: flex;
   justify-content: space-around;
-  input {
-    font-size: 16px;
-  }
 
-  h4,
   p,
+  h4,
   input {
     height: 1.5em;
-    width: 15%;
     text-align: center;
-    border: 2px solid var(--main-color);
     margin: 0.5em 0 0.5em 0;
     line-height: 1.5em;
   }
+  h4,
   input {
-    background-color: var(--second-color);
-    padding: 0;
+    border: 2px solid var(--main-color);
+    width: 15%;
   }
-
-  .cara {
+  input {
+    padding: 0;
+    background-color: var(--second-color);
+    font-size: 16px;
+  }
+  .dd {
     background: var(--main-color);
     color: white;
   }
 `;
-export default SCaracForm;
+
+export default SsavingValue;
