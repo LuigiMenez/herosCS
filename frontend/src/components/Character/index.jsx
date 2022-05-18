@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import CharactersSection from "@components/CharactersSection";
 import CharacterList from "@components/CharactersLists";
 import { gameDetails } from "../../redux/games/gameReducer";
@@ -34,6 +34,10 @@ export default function Character() {
       <img src={currentGame.nameimg} alt={currentGame.name} />
       <CharactersSection title="Mes personnages" />
       <CharacterList />
+      <Link className="link" to={`/${id}/newcharacter`}>
+        <button type="button"> Create </button>
+      </Link>
+
       <CharactersSection title="Autres personnages" />
       {character.map(
         (chara) =>

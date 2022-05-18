@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify";
 import Home from "@pages/Home";
 import Header from "@components/Header";
 import Character from "@components/Character";
+import CharacterSheet from "@pages/CharacterSheet";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:id" element={<Character />} />
+        <Route path="/:id/newcharacter" element={<CharacterSheet />} />
       </Routes>
       <ToastContainer
         position="top-right"
