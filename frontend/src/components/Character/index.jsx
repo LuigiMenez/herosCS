@@ -33,7 +33,6 @@ export default function Character() {
     <SCharac>
       <img src={currentGame.nameimg} alt={currentGame.name} />
       <CharactersSection title="Mes personnages" buttonOn />
-      <CharacterList />
 
       <CharactersSection title="Autres personnages" />
       {character.map(
