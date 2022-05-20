@@ -11,6 +11,10 @@ const SCharac = styled.main`
     ${media("pad")`
     width: 30vw;`}
   }
+  .userOff {
+    display: none;
+    border: red 5px solid;
+  }
 `;
 
 export default SCharac;

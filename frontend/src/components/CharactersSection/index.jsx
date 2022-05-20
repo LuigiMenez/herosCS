@@ -27,8 +27,9 @@ export default function CharactersSection({ title, buttonOn }) {
 }
 CharactersSection.propTypes = {
   title: PropTypes.string,
-  buttonOn: PropTypes.bool.isRequired,
+  buttonOn: PropTypes.bool,
 };
 CharactersSection.defaultProps = {
   title: "",
+  buttonOn: false,
 };
