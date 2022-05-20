@@ -9,6 +9,7 @@ import SCharac from "./style";
 
 export default function Character() {
   const { id } = useParams();
+  const { user } = useSelector((store) => store.userReducer);
   const { currentGame } = useSelector((state) => {
     return (
       {
@@ -33,11 +34,22 @@ export default function Character() {
     <SCharac>
       <img src={currentGame.nameimg} alt={currentGame.name} />
       <CharactersSection title="Mes personnages" buttonOn />
-
+      {character.map(
+        (chara) =>
+          currentGame.id === chara.idJdr &&
+          user.id === chara.idUser && (
+            <CharacterList
+              key={chara.id}
+              lvl={chara.lvl}
+              characterName={chara.nameCharacters}
+            />
+          )
+      )}
       <CharactersSection title="Autres personnages" />
       {character.map(
         (chara) =>
-          currentGame.id === chara.idJdr && (
+          currentGame.id === chara.idJdr &&
+          user.id !== chara.idUser && (
             <CharacterList
               key={chara.id}
               lvl={chara.lvl}

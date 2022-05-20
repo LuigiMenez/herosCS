@@ -49,6 +49,9 @@ const SCharactersLists = styled.section`
     width: 40%;
     `}
   }
+  .userOff {
+    border: red 5px solid;
+  }
   .lvl {
     width: 15%;
   }
