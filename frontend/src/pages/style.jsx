@@ -6,7 +6,7 @@ const SHome = styled.section`
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  width: 70vw;`}
+  width: 67vw;`}
 `;
 
 export default SHome;

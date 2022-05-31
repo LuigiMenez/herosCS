@@ -15,7 +15,8 @@ const SCard = styled.div`
   border-radius: 15px;
   overflow: hidden;
   ${media("pad")`
-    width: 20vw;`}
+    width: 20vw;
+    `}
 
   p {
     background-color: #1f1d3578;

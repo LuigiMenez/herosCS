@@ -5,10 +5,11 @@ import Header from "@components/Header";
 import Character from "@components/Character";
 import CharacterSheet from "@pages/CharacterSheet";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "@components/Footer";
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -26,7 +27,8 @@ function App() {
         draggable
         pauseOnHover
       />
-    </div>
+      <Footer />
+    </>
   );
 }
 
