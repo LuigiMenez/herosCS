@@ -8,7 +8,7 @@ const SFooter = styled.footer`
   bottom: 0;
   color: white;
   ${media("pad")`
-    width: 69vw;
+    width: 70vw;
     height: 10vh;
     bottom: 0;
     `}
