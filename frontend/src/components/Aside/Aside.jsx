@@ -7,7 +7,7 @@ export default function Aside({ bgImg, description, nameImg, nameJdr }) {
       <div className="nameTitle">
         <img src={nameImg} alt={nameJdr} />
       </div>
-      <p>{description}</p>
+      {description && <p>{description}</p>}
     </SAside>
   );
 }
