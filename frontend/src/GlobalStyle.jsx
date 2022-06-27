@@ -7,7 +7,9 @@ const GlobalStyle = createGlobalStyle`
   --main-color: #500510;
   --second-color: #d5d5d5;
 }
+
 body{
+  position: relative;
   background: #d5d5d5;
   min-height: 100vh;
 }
