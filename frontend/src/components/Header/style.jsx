@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { media } from "../../mediaQueries";
 
 const SHeader = styled.header`
+  box-sizing: border-box;
   height: 3vh;
   background-color: var(--second-color);
   display: flex;
@@ -10,7 +11,7 @@ const SHeader = styled.header`
   padding: 2.5em;
   ${media("pad")`
     height: 10vh;
-    width: 67vw;
+    width: 70vw;
     justify-content: space-between
     `}
 

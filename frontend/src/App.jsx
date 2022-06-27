@@ -11,11 +11,13 @@ function App() {
   return (
     <>
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/:id" element={<Character />} />
-        <Route path="/:id/newcharacter" element={<CharacterSheet />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/:id" element={<Character />} />
+          <Route path="/:id/newcharacter" element={<CharacterSheet />} />
+        </Routes>
+      </main>
       <ToastContainer
         position="top-right"
         autoClose={5000}

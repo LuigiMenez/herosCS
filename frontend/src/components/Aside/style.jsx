@@ -1,16 +1,19 @@
 import styled from "styled-components";
+import { media } from "../../mediaQueries";
 
 const SAside = styled.section`
+  display: none;
   background: url(${(props) => props.img});
   position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
   width: 30vw;
   height: 100vh;
-  .nameTitle {
-    width: 100%;
-  }
+  ${media("pad")`
+    display: block;
+    `}
 
   p,
   img {

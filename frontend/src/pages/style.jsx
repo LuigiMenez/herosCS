@@ -4,9 +4,9 @@ import { media } from "../mediaQueries";
 const SHome = styled.section`
   ${media("pad")`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  width: 67vw;`}
+  width: 70vw;`}
 `;
 
 export default SHome;
