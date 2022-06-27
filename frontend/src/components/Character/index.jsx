@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import CharactersSection from "@components/CharactersSection";
 import CharacterList from "@components/CharactersLists";
+import AsideChara from "@components/AsideChara";
 import { gameDetails } from "../../redux/games/gameReducer";
 import { getCharacter } from "../../redux/games/characterReducer";
 import SCharac from "./style";
@@ -57,6 +58,7 @@ export default function Character() {
             />
           )
       )}
+      <AsideChara />
     </SCharac>
   );
 }
