@@ -34,7 +34,7 @@ export default function Character() {
   return (
     <SCharac>
       <img src={currentGame.nameimg} alt={currentGame.name} />
-      <CharactersSection title="Mes personnages" buttonOn />
+      {user.id && <CharactersSection title="Mes personnages" buttonOn />}
       {character.map(
         (chara) =>
           currentGame.id === chara.idJdr &&
@@ -46,7 +46,11 @@ export default function Character() {
             />
           )
       )}
-      <CharactersSection title="Autres personnages" />
+      {user.id ? (
+        <CharactersSection title="Autres personnages" />
+      ) : (
+        <CharactersSection title="Personnages disponible" />
+      )}
       {character.map(
         (chara) =>
           currentGame.id === chara.idJdr &&
