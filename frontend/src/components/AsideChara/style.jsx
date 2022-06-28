@@ -50,7 +50,7 @@ const SAsideChara = styled.section`
     margin: auto;
   }
 
-  img {
+  .charaImg {
     width: 65%;
     margin: 1em auto 1em;
     border: 5px solid #2cabd8;
