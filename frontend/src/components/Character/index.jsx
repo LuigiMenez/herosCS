@@ -43,6 +43,7 @@ export default function Character() {
               key={chara.id}
               lvl={chara.lvl}
               characterName={chara.nameCharacters}
+              race={chara.name}
             />
           )
       )}
@@ -59,6 +60,7 @@ export default function Character() {
               key={chara.id}
               lvl={chara.lvl}
               characterName={chara.nameCharacters}
+              race={chara.name}
             />
           )
       )}

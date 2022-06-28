@@ -10,7 +10,7 @@ export default function AsideChara() {
         <p>Race</p>
         <p>lvl: 2</p>
       </div>
-      <img src={tsuna} alt="" />
+      <img className="charaImg" src={tsuna} alt="" />
       <div className="container">
         <div className="columnLeft">
           <p>Taille: 1.60m</p>
