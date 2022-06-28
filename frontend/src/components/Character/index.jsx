@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import CharactersSection from "@components/CharactersSection";
 import CharacterList from "@components/CharactersLists";
 import AsideChara from "@components/AsideChara";
@@ -11,6 +11,7 @@ import SCharac from "./style";
 export default function Character() {
   const { id } = useParams();
   const { user } = useSelector((store) => store.userReducer);
+  const [currentChara, setCurrentChara] = useState([]);
   const { currentGame } = useSelector((state) => {
     return (
       {
@@ -39,12 +40,17 @@ export default function Character() {
         (chara) =>
           currentGame.id === chara.idJdr &&
           user.id === chara.idUser && (
-            <CharacterList
+            <Link
+              to="/"
               key={chara.id}
-              lvl={chara.lvl}
-              characterName={chara.nameCharacters}
-              race={chara.name}
-            />
+              onMouseEnter={() => setCurrentChara(chara)}
+            >
+              <CharacterList
+                lvl={chara.lvl}
+                characterName={chara.nameCharacters}
+                race={chara.name}
+              />
+            </Link>
           )
       )}
       {user.id ? (
@@ -56,15 +62,35 @@ export default function Character() {
         (chara) =>
           currentGame.id === chara.idJdr &&
           user.id !== chara.idUser && (
-            <CharacterList
+            <Link
+              to="/"
               key={chara.id}
-              lvl={chara.lvl}
-              characterName={chara.nameCharacters}
-              race={chara.name}
-            />
+              onMouseEnter={() => setCurrentChara(chara)}
+            >
+              <CharacterList
+                lvl={chara.lvl}
+                characterName={chara.nameCharacters}
+                race={chara.name}
+              />
+            </Link>
           )
       )}
-      <AsideChara />
+      <AsideChara
+        charaName={currentChara.nameCharacters}
+        classChara="class"
+        race={currentChara.name}
+        lvl={currentChara.lvl}
+        img="./src/assets/tsunae.jpg"
+        size={currentChara.size}
+        weight=""
+        speed="9"
+        eyes="blue"
+        align="CN"
+        deeus="Dieux"
+        sex={currentChara.sexe}
+        hair="hair"
+        bio="iDonec sollicitudin molestie malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur aliquet quam id dui posuere blandit. Vivamus suscipit tortor eget felis porttitor volutpat. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem."
+      />
     </SCharac>
   );
 }
