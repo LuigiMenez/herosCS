@@ -26,11 +26,11 @@ export default function Home() {
           to={`/${game.id}`}
           onMouseEnter={() => setGaming(game)}
         >
-          <Cards key={game.id} image={game.image} name={game.nameJdr} />
+          <Cards image={`./src/assets/jdr/${game.image}`} name={game.nameJdr} />
         </Link>
       ))}
       <Aside
-        bgImg={gaming.image}
+        bgImg={`./src/assets/asideJdr/${gaming.coverImg}`}
         nameImg={gaming.nameimg}
         nameJdr={gaming.nameJdr}
         description={gaming.descr}

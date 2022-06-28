@@ -4,6 +4,8 @@ import { media } from "../../mediaQueries";
 const SAside = styled.section`
   display: none;
   background: url(${(props) => props.img});
+  background-position: top;
+  background-size: cover;
   position: absolute;
   position: fixed;
   top: 0;
