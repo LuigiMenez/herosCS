@@ -52,6 +52,7 @@ const SAsideChara = styled.section`
 
   .charaImg {
     width: 65%;
+    aspect-ratio: 1/1.2;
     margin: 1em auto 1em;
     border: 5px solid #2cabd8;
   }
