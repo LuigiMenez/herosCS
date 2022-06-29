@@ -80,15 +80,15 @@ export default function Character() {
         classChara="class"
         race={currentChara.name}
         lvl={currentChara.lvl}
-        img="./src/assets/tsunae.jpg"
+        img={`./src/assets/${currentChara.img}`}
         size={currentChara.size}
-        weight=""
-        speed="9"
-        eyes="blue"
+        weight={currentChara.weight}
+        speed={currentChara.speed}
+        eyes={currentChara.eyes}
         align="CN"
-        deeus="Dieux"
+        deeus={currentChara.deeus}
         sex={currentChara.sexe}
-        hair="hair"
+        hair={currentChara.hair}
         bio="iDonec sollicitudin molestie malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur aliquet quam id dui posuere blandit. Vivamus suscipit tortor eget felis porttitor volutpat. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem."
       />
     </SCharac>
