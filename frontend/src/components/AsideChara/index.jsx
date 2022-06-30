@@ -23,7 +23,7 @@ export default function AsideChara({
       <div className="type">
         <p>{classChara}</p>
         <p>{race}</p>
-        <p>lvl: {lvl}</p>
+        {lvl ? <p>lvl: {lvl}</p> : ""}
       </div>
       <img className="charaImg" src={img} alt={charaName} />
       <div className="container">
@@ -53,8 +53,8 @@ AsideChara.propTypes = {
   race: PropTypes.string,
   lvl: PropTypes.number,
   img: PropTypes.string,
-  size: PropTypes.number,
-  weight: PropTypes.number,
+  size: PropTypes.string,
+  weight: PropTypes.string,
   speed: PropTypes.number,
   eyes: PropTypes.string,
   align: PropTypes.string,
@@ -69,8 +69,8 @@ AsideChara.defaultProps = {
   race: "",
   lvl: 1,
   img: "",
-  size: 1,
-  weight: 1,
+  size: "",
+  weight: "",
   speed: 1,
   eyes: "",
   align: "",

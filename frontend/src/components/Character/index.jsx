@@ -77,7 +77,7 @@ export default function Character() {
       )}
       <AsideChara
         charaName={currentChara.nameCharacters}
-        classChara="class"
+        classChara=""
         race={currentChara.name}
         lvl={currentChara.lvl}
         img={`./src/assets/${currentChara.img}`}

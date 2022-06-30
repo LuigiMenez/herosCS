@@ -22,7 +22,7 @@ class AbstractManager {
 
   CharactersByGame(id) {
     return this.connection.query(
-      `SELECT *  FROM Characters AS ch INNER JOIN characteristics AS cha ON ch.id = idCharacter JOIN raceStarFinder AS ra ON ra.id = idRace WHERE idJdr = ?`,
+      `SELECT * FROM characteristics as ch right join Characters on Characters.id = idCharacter  left join raceStarFinder as ra on ra.id = idRace where idJdr = ?`,
       [id]
     );
   }
