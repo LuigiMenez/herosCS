@@ -5,7 +5,7 @@ const ScsArray = styled.section`
   margin: auto;
 
   .carac {
-    border: 2px solid var(--main-color);
+    border: 2px solid ${(props) => props.theme.primary};
   }
 `;
 

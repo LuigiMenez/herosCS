@@ -16,7 +16,7 @@ const SHeader = styled.header`
     `}
 
   h1 {
-    color: var(--main-color);
+    color: ${(props) => props.theme.primary};
     font-size: 3.5em;
     font-weight: bold;
     display: none;

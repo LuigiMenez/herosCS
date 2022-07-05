@@ -1,29 +1,29 @@
 export const hf = {
-  backgroundColor: "#500510",
-  textColor: "#d5d5d5",
-  primary: "#500510",
-  second: "#d5d5d5",
+  primary: "#361009",
+  second: "#FEEFC0",
+  textColor: "#D13E24",
+  textColor2: "#FFFFFF",
 };
 
 export const sf = {
-  backgroundColor: "#201853",
-  textColor: "#e27029",
   primary: "#201853",
   second: "#2cabd8",
+  textColor: "#e27029",
+  textColor2: "#FFFFFF",
 };
 
 export const horVam = {
-  backgroundColor: "",
-  textColor: "",
   primary: "",
   second: "",
+  textColor: "",
+  textColor2: "",
 };
 
 export const arran = {
-  backgroundColor: "",
-  textColor: "",
   primary: "",
   second: "",
+  textColor: "",
+  textColor2: "",
 };
 
 export default {

@@ -14,7 +14,7 @@ const SsavingValue = styled.section`
   }
   h4,
   input {
-    border: 2px solid var(--main-color);
+    border: 2px solid ${(props) => props.theme.primary};
     width: 15%;
   }
   input {
@@ -23,8 +23,8 @@ const SsavingValue = styled.section`
     font-size: 16px;
   }
   .dd {
-    background: var(--main-color);
-    color: white;
+    background: ${(props) => props.theme.primary};
+    color: ${(props) => props.theme.textColor2};
   }
 `;
 

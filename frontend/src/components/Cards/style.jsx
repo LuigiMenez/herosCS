@@ -11,7 +11,7 @@ const SCard = styled.div`
   margin: 1.5rem auto 1.5rem;
   height: 20vh;
   width: 90vw;
-  outline: solid 4px var(--main-color);
+  outline: solid 4px ${(props) => props.theme.primary};
   border-radius: 15px;
   overflow: hidden;
   ${media("pad")`
@@ -20,7 +20,7 @@ const SCard = styled.div`
 
   p {
     background-color: #1f1d3578;
-    color: var(--second-color);
+    color: ${(props) => props.theme.textColor2};
     text-align: center;
     font-size: 1.8rem;
     width: 100%;
