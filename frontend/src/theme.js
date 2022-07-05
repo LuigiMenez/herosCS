@@ -3,6 +3,7 @@ export const hf = {
   second: "#FEEFC0",
   textColor: "#D13E24",
   textColor2: "#FFFFFF",
+  bg: "",
 };
 
 export const sf = {
@@ -10,6 +11,7 @@ export const sf = {
   second: "#2cabd8",
   textColor: "#e27029",
   textColor2: "#FFFFFF",
+  bg: "",
 };
 
 export const horVam = {
@@ -17,6 +19,7 @@ export const horVam = {
   second: "#DE182D",
   textColor: "#FEFEFF",
   textColor2: "#F992BD",
+  bg: "",
 };
 
 export const arran = {
@@ -24,6 +27,7 @@ export const arran = {
   second: "#8A5836",
   textColor: "#388286",
   textColor2: "#515D3C",
+  bg: "",
 };
 
 export default {

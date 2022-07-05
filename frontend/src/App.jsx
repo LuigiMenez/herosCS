@@ -9,6 +9,7 @@ import CharacterSheet from "@pages/CharacterSheet";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "@components/Footer";
 // import { sf } from "./theme";
+import GlobalStyle from "./GlobalStyle";
 
 function App() {
   const theme = useSelector((state) => state.theme.theme);
@@ -18,6 +19,8 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
+
       <Header />
       <main>
         <Routes>

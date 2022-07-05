@@ -4,13 +4,12 @@ import reset from "styled-reset";
 const GlobalStyle = createGlobalStyle`
     ${reset}
 :root{
-  --main-color: #500510;
-  --second-color: #d5d5d5;
+
 }
 
 body{
   position: relative;
-  background: #d5d5d5;
+  background: ${(props) => props.theme.bg};
   min-height: 100vh;
 }
 a{
