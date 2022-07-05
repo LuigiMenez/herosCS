@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { media } from "../../mediaQueries";
 
 const SAsideChara = styled.section`
-  background: #201853;
-  border-left: 5px solid #2cabd8;
+  background: ${(props) => props.theme.primary};
+  border-left: 5px solid ${(props) => props.theme.second};
   display: none;
   position: absolute;
   position: fixed;
@@ -12,7 +12,7 @@ const SAsideChara = styled.section`
   right: 0;
   width: 30vw;
   height: 100vh;
-  color: white;
+  color: ${(props) => props.theme.textColor2};
   ${media("pad")`
     display: block;
     `} h2 {
@@ -24,7 +24,7 @@ const SAsideChara = styled.section`
   h2,
   h3,
   .type {
-    color: #e27029;
+    color: ${(props) => props.theme.textColor};
     font-weight: bold;
   }
 
@@ -54,7 +54,7 @@ const SAsideChara = styled.section`
     width: 65%;
     aspect-ratio: 1/1.2;
     margin: 1em auto 1em;
-    border: 5px solid #2cabd8;
+    border: 5px solid ${(props) => props.theme.second};
   }
 
   p {

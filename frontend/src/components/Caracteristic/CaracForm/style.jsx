@@ -13,7 +13,7 @@ const SCaracForm = styled.form`
     height: 1.5em;
     width: 15%;
     text-align: center;
-    border: 2px solid var(--main-color);
+    border: 2px solid ${(props) => props.theme.primary};
     margin: 0.5em 0 0.5em 0;
     line-height: 1.5em;
   }
@@ -23,8 +23,8 @@ const SCaracForm = styled.form`
   }
 
   .cara {
-    background: var(--main-color);
-    color: white;
+    background: ${(props) => props.theme.primary};
+    color: ${(props) => props.theme.textColor2};
   }
 `;
 export default SCaracForm;

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 const SnavChara = styled.nav`
-  border: 5px solid #2cabd8;
+  border: 5px solid ${(props) => props.theme.second};
   border-radius: 15px;
   margin: 2em auto 2em;
-  background-color: #201853;
+  background-color: ${(props) => props.theme.primary};
   width: 80%;
   ul {
     display: flex;
@@ -14,7 +14,7 @@ const SnavChara = styled.nav`
   }
   li {
     position: relative;
-    color: white;
+    color: ${(props) => props.theme.textColor2};
     font-weight: bold;
     font-size: 1.2em;
   }
@@ -25,7 +25,7 @@ const SnavChara = styled.nav`
     left: 0;
     right: 0;
     height: 2px;
-    background-color: #3cefff;
+    background-color: ${(props) => props.theme.second};
     transform-origin: bottom right;
     transform: scaleX(0);
     transition: transform 0.5s ease;
