@@ -7,12 +7,9 @@ import { useSelector } from "react-redux";
 
 export default function CharacterSheet() {
   const { currentGame } = useSelector((state) => {
-    return (
-      {
-        ...state.gameReducer,
-      } || {}
-    );
+    return state.gameReducer;
   });
+
   return (
     <SCharac>
       <img src={currentGame.nameimg} alt={currentGame.name} />

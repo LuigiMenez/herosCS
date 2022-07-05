@@ -8,9 +8,8 @@ const SnavChara = styled.nav`
   width: 80%;
   ul {
     display: flex;
-    justify-content: space-between;
-    width: 80%;
-    margin: 2em auto 2em;
+    justify-content: space-around;
+    margin: 1em 0 1em 0;
   }
   li {
     position: relative;

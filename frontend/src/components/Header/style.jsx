@@ -4,7 +4,6 @@ import { media } from "../../mediaQueries";
 const SHeader = styled.header`
   box-sizing: border-box;
   height: 3vh;
-  background-color: var(--second-color);
   display: flex;
   justify-content: space-around;
   align-items: center;

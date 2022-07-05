@@ -12,7 +12,7 @@ const SModal = styled.div`
   justify-content: center;
   .modalContent {
     width: 500px;
-    background-color: var(--second-color);
+    background-color: #d3caca;
   }
   header,
   footer {
@@ -23,8 +23,8 @@ const SModal = styled.div`
   }
   main {
     padding: 10px;
-    border-top: 1px solid var(--main-color);
-    border-bottom: 1px solid var(--main-color);
+    border-top: 1px solid ${(props) => props.theme.second};
+    border-bottom: 1px solid ${(props) => props.theme.second};
   }
 `;
 
