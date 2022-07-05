@@ -1,5 +1,6 @@
 import Caractereristic from "@components/Caracteristic";
 import SCharac from "@components/Character/style";
+import NavChara from "@components/NavChara";
 import Saving from "@components/Saving";
 
 import { useSelector } from "react-redux";
@@ -15,6 +16,7 @@ export default function CharacterSheet() {
   return (
     <SCharac>
       <img src={currentGame.nameimg} alt={currentGame.name} />
+      <NavChara />
       <section className="array">
         <Caractereristic />
         <Saving />

@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Cards from "@components/Cards";
 import Aside from "@components/Aside/Aside";
 import { getGames } from "../redux/games/gameReducer";
+import { applyTheme } from "../redux/theme/themeActions";
 import SHome from "./style";
 
 export default function Home() {
@@ -13,6 +14,10 @@ export default function Home() {
   const [gaming, setGaming] = useState([]);
 
   const dispatch = useDispatch();
+
+  const changeTheme = (theme) => {
+    dispatch(applyTheme(theme));
+  };
   useEffect(() => {
     dispatch(getGames());
   }, []);
@@ -25,6 +30,7 @@ export default function Home() {
           className="link"
           to={`/${game.id}`}
           onMouseEnter={() => setGaming(game)}
+          onClick={() => changeTheme(game.theme)}
         >
           <Cards image={`./src/assets/jdr/${game.image}`} name={game.nameJdr} />
         </Link>

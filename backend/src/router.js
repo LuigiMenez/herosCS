@@ -33,6 +33,6 @@ router.post(
   AuthController.login
 );
 
-router.use(passport.authenticate("jwt"));
+// router.use(passport.authenticate("jwt"));
 
 module.exports = router;

@@ -20,9 +20,7 @@ export default function Character() {
     );
   });
 
-  const { character } = useSelector((state) => ({
-    ...state.characterReducer,
-  }));
+  const { characters } = useSelector((state) => state.characterReducer);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -36,7 +34,7 @@ export default function Character() {
     <SCharac>
       <img src={currentGame.nameimg} alt={currentGame.name} />
       {user.id && <CharactersSection title="Mes personnages" buttonOn />}
-      {character.map(
+      {characters.map(
         (chara) =>
           currentGame.id === chara.idJdr &&
           user.id === chara.idUser && (
@@ -58,7 +56,7 @@ export default function Character() {
       ) : (
         <CharactersSection title="Personnages disponible" />
       )}
-      {character.map(
+      {characters.map(
         (chara) =>
           currentGame.id === chara.idJdr &&
           user.id !== chara.idUser && (
