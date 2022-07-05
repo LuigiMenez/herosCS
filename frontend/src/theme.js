@@ -13,17 +13,17 @@ export const sf = {
 };
 
 export const horVam = {
-  primary: "",
-  second: "",
-  textColor: "",
-  textColor2: "",
+  primary: "#12040D",
+  second: "#DE182D",
+  textColor: "#FEFEFF",
+  textColor2: "#F992BD",
 };
 
 export const arran = {
-  primary: "",
-  second: "",
-  textColor: "",
-  textColor2: "",
+  primary: "#E8D7BD",
+  second: "#8A5836",
+  textColor: "#388286",
+  textColor2: "#515D3C",
 };
 
 export default {
