@@ -10,7 +10,7 @@ function characterReducer(state = initialState, action) {
     case "LOADCHARACTER": {
       return {
         ...state,
-        character: action.payload,
+        characters: action.payload,
       };
     }
     default:

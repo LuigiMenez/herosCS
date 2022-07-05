@@ -5,7 +5,7 @@ const SFooter = styled.footer`
   width: 100vw;
   height: 10vh;
   box-sizing: border-box;
-  background: var(--main-color);
+  background: ${(props) => props.theme.primary};
   color: white;
   ${media("pad")`
     position: absolute;
