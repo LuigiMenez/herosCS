@@ -8,9 +8,9 @@ import { applyTheme } from "../redux/theme/themeActions";
 import SHome from "./style";
 
 export default function Home() {
-  const { games } = useSelector((state) => ({
-    ...state.gameReducer,
-  }));
+  const { games } = useSelector((state) => {
+    return state.gameReducer;
+  });
   const [gaming, setGaming] = useState([]);
 
   const dispatch = useDispatch();
