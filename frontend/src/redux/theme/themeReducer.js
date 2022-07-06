@@ -11,6 +11,8 @@ function themeReducer(state = initialState, action) {
   switch (action.type) {
     case Actions.APPLY_THEME:
       return Object.assign({}, { theme: themes[action.payload] });
+    case "RESET_THEME":
+      return initialState;
     default:
       return state;
   }
