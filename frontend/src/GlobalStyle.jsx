@@ -3,9 +3,6 @@ import reset from "styled-reset";
 
 const GlobalStyle = createGlobalStyle`
     ${reset}
-:root{
-
-}
 
 body{
   position: relative;
