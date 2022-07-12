@@ -1,3 +1,4 @@
+import AsideForm from "@components/AsideForm";
 import Caractereristic from "@components/Caracteristic";
 import SCharac from "@components/Character/style";
 import NavChara from "@components/NavChara";
@@ -18,6 +19,7 @@ export default function CharacterSheet() {
         <Caractereristic />
         <Saving />
       </section>
+      <AsideForm />
     </SCharac>
   );
 }

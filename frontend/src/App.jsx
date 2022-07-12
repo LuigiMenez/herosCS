@@ -8,7 +8,6 @@ import Character from "@components/Character";
 import CharacterSheet from "@pages/CharacterSheet";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "@components/Footer";
-// import { sf } from "./theme";
 import GlobalStyle from "./GlobalStyle";
 
 function App() {
@@ -28,6 +27,7 @@ function App() {
           <Route path="/:id/newcharacter" element={<CharacterSheet />} />
         </Routes>
       </main>
+      <Footer />
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -39,7 +39,6 @@ function App() {
         draggable
         pauseOnHover
       />
-      <Footer />
     </ThemeProvider>
   );
 }
