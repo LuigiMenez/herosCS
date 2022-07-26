@@ -1,5 +1,5 @@
 import Button from "@components/Button";
-import axios from "axios";
+import useApi from "@services/useApi";
 import { toast } from "react-toastify";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -15,29 +15,46 @@ export default function FormAuth() {
     firstname: "",
     avatar: "",
   });
+  const api = useApi();
   const dispatch = useDispatch();
 
   const changeLog = (evt) => {
-    const newData = { ...formData };
-    newData[evt.target.name] = evt.target.value;
-    setFormData(newData);
+    const { name, value, type, files } = evt.target;
+    let newValue = null;
+    switch (type) {
+      case "file":
+        [newValue] = files;
+        break;
+      default:
+        newValue = value;
+    }
+    setFormData({ ...formData, [name]: newValue });
   };
+
   const hChange = () => {
     return setRegisterUser(!registeredUser);
   };
 
   const hsubmit = (evt) => {
     evt.preventDefault();
-    let route = "http://localhost:5050/auth/login";
+
+    const finalData = Object.keys(formData).reduce((accu, key) => {
+      accu.append(key, formData[key]);
+      return accu;
+    }, new FormData());
+
+    let route = "/auth/login";
     if (registeredUser) {
-      route = "http://localhost:5050/auth/signup";
+      route = "/auth/signup";
     }
-    axios
-      .post(route, formData)
+    api
+      .post(route, finalData)
       .then(({ data }) => {
+        const { token, user } = data;
+        api.defaults.headers.authorization = `Bearer ${token}`;
         dispatch({
           type: "LOGIN",
-          payload: data,
+          payload: { ...user, token },
         });
         toast.success("🎲 Réussite critique!");
       })
@@ -95,6 +112,15 @@ export default function FormAuth() {
                 type="password"
                 name="password"
                 value={formData.password}
+                onChange={changeLog}
+              />
+            </label>
+            <label htmlFor="avatar">
+              Avatar:
+              <input
+                type="file"
+                name="avatar"
+                value={formData.avatar}
                 onChange={changeLog}
               />
             </label>

@@ -1,14 +1,11 @@
 const initialState = {
-  token: "",
-  user: {
-    id: null,
-    mail: null,
-    password: null,
-    login: null,
-    firstname: null,
-    lastname: null,
-    avatar: null,
-  },
+  id: null,
+  mail: null,
+  password: null,
+  login: null,
+  firstname: null,
+  lastname: null,
+  avatar: null,
 };
 
 const userReducer = (state = initialState, action) => {
