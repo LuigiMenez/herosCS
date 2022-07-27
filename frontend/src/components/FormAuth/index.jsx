@@ -15,6 +15,7 @@ export default function FormAuth() {
     firstname: "",
     avatar: "",
   });
+
   const api = useApi();
   const dispatch = useDispatch();
 
@@ -64,7 +65,12 @@ export default function FormAuth() {
   };
 
   return (
-    <SForm className="checkbox" onSubmit={hsubmit}>
+    <SForm
+      className="checkbox"
+      onSubmit={hsubmit}
+      method="post"
+      enctype="multipart/form-data"
+    >
       <input type="checkbox" checked={registeredUser} onChange={hChange} />
       {registeredUser ? (
         <div className="formLogin">
@@ -117,12 +123,7 @@ export default function FormAuth() {
             </label>
             <label htmlFor="avatar">
               Avatar:
-              <input
-                type="file"
-                name="avatar"
-                value={formData.avatar}
-                onChange={changeLog}
-              />
+              <input type="file" name="avatar" onChange={changeLog} />
             </label>
             <Button title="Inscription" func={hsubmit} />
           </div>

@@ -1,6 +1,5 @@
 const express = require("express");
 const passport = require("passport");
-require("./passportStrategies");
 const multer = require("multer");
 
 const {
