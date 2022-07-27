@@ -16,6 +16,7 @@ const SNav = styled.nav`
   }
   img {
     width: 3.5rem;
+    border-radius: 50%;
   }
 `;
 

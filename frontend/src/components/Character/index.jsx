@@ -10,7 +10,7 @@ import SCharac from "./style";
 
 export default function Character() {
   const { id } = useParams();
-  const { user } = useSelector((store) => store.userReducer);
+  const user = useSelector((store) => store.userReducer);
   const [currentChara, setCurrentChara] = useState([]);
   const { currentGame } = useSelector((state) => {
     return (
