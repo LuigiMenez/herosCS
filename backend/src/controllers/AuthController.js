@@ -1,20 +1,26 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const models = require("../models");
+const { uploadImage } = require("../services/cloudinary");
 
-const { JWT_ROUNDS, JWT_SECRET } = process.env;
+const { CRYPT_ROUNDS, CRYPT_SECRET } = process.env;
 
 class AuthController {
-  static signup = (req, res) => {
-    const formData = req.body;
-    formData.password = bcrypt.hashSync(formData.password, Number(JWT_ROUNDS));
+  static signup = async (req, res) => {
+    const user = req.body;
+
+    user.password = bcrypt.hashSync(user.password, parseInt(CRYPT_ROUNDS, 10));
+
+    const feedbackImg = await uploadImage(req.file.path);
+    user.avatar = feedbackImg.secure_url;
+
     models.users
-      .insert(formData)
+      .insert(user)
       .then(([sqlRes]) => {
-        delete formData.password;
-        formData.id = sqlRes.insertId;
-        const token = jwt.sign(formData, JWT_SECRET);
-        res.status(201).json({ user: formData, token });
+        user.id = sqlRes.insertId;
+        delete user.password;
+        const token = jwt.sign(user, CRYPT_SECRET);
+        res.status(201).json({ user, token });
       })
       .catch((err) => {
         console.error(err);
@@ -23,7 +29,7 @@ class AuthController {
   };
 
   static login = (req, res) => {
-    const token = jwt.sign(req.user, JWT_SECRET);
+    const token = jwt.sign(req.user, CRYPT_SECRET);
     res.status(200).json({ user: req.user, token });
   };
 }

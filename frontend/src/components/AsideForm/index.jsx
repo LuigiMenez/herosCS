@@ -23,7 +23,6 @@ export default function AsideForm() {
     const { name, value } = evt.target;
     setFormData({ ...formData, [name]: value });
   };
-
   const hSubmit = (evt) => {
     evt.preventDefault();
   };
@@ -47,7 +46,7 @@ export default function AsideForm() {
       <select name="race" onChange={formChara} value={formData.race}>
         <option> --- Espèce ---</option>
         {Object.keys(races).map((race) => (
-          <option key={race.id}>{race}</option>
+          <option key={race}>{race}</option>
         ))}
       </select>
       <br />

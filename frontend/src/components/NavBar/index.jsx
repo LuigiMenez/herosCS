@@ -8,7 +8,7 @@ import iconProfil from "../../assets/iconProfil.svg";
 
 export default function NavBar() {
   const [show, setShow] = useState(false);
-  const { user } = useSelector((store) => store.userReducer);
+  const user = useSelector((store) => store.userReducer);
   const showModal = () => {
     setShow(true);
   };

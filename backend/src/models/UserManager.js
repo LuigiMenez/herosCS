@@ -3,8 +3,8 @@ const AbstractManager = require("./AbstractManager");
 class UserManager extends AbstractManager {
   static table = "users";
 
-  insert(formData) {
-    const { mail, password, login, firstname, lastname, avatar } = formData;
+  insert(user) {
+    const { mail, password, login, firstname, lastname, avatar } = user;
     return this.connection.query(
       `insert into ${UserManager.table} (mail, password, login, firstname, lastname, avatar) values (?,?,?,?,?,?)`,
       [mail, password, login, firstname, lastname, avatar]

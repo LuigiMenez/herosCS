@@ -1,6 +1,6 @@
 const express = require("express");
 const passport = require("passport");
-require("./passportStrategies");
+const multer = require("multer");
 
 const {
   ItemController,
@@ -8,6 +8,8 @@ const {
   CharactersController,
   AuthController,
 } = require("./controllers");
+
+const upload = multer({ dest: "tmp/" });
 
 const router = express.Router();
 
@@ -26,10 +28,10 @@ router.delete("/jdr/:id", JdrController.delete);
 router.get("/Characters", CharactersController.browse);
 router.get("/Characters/:id", CharactersController.read);
 
-router.post("/auth/signup", AuthController.signup);
+router.post("/auth/signup", upload.single("avatar"), AuthController.signup);
 router.post(
   "/auth/login",
-  passport.authenticate("local"),
+  passport.authenticate("local", { session: false }),
   AuthController.login
 );
 

@@ -4,7 +4,7 @@ const { Strategy: JWTStrategy, ExtractJwt } = require("passport-jwt");
 const bcrypt = require("bcrypt");
 const models = require("./models");
 
-const { JWT_SECRET } = process.env;
+const { CRYPT_SECRET } = process.env;
 
 passport.use(
   new LocalStrategy(
@@ -34,7 +34,7 @@ passport.use(
   new JWTStrategy(
     {
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-      secretOrKey: JWT_SECRET,
+      secretOrKey: CRYPT_SECRET,
     },
     (jwtPayload, done) => {
       const user = jwtPayload;
