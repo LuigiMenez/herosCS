@@ -45,11 +45,13 @@ export default function FormAuth() {
     }, new FormData());
 
     let route = "/auth/login";
+    let containt = formData;
     if (registeredUser) {
       route = "/auth/signup";
+      containt = finalData;
     }
     api
-      .post(route, finalData)
+      .post(route, containt)
       .then(({ data }) => {
         const { token, user } = data;
         api.defaults.headers.authorization = `Bearer ${token}`;

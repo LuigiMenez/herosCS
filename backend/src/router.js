@@ -31,7 +31,7 @@ router.get("/Characters/:id", CharactersController.read);
 router.post("/auth/signup", upload.single("avatar"), AuthController.signup);
 router.post(
   "/auth/login",
-  passport.authenticate("local", { session: false }),
+  passport.authenticate("local"),
   AuthController.login
 );
 
